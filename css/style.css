@@ -259,7 +259,9 @@ span    {
     border-radius: 50%;
     border: 3px solid var(--bg-color);
     box-shadow: 0 0 8px var(--main-color);
+    animation: popGlow 0.6s ease-out forwards;
 }
+
 
 /* Hover effect */
 .timeline-item:hover {
@@ -302,12 +304,31 @@ span    {
     }
 
     .timeline-item {
-        padding-left: 2rem;
+        padding-left: 2.5rem;
     }
 
     .timeline-item::before {
-        left: 0;
-        top: 10px;
+        left: 0.7rem;
+        top: 1.2rem;
+        animation: popGlow 0.6s ease-out forwards;
+    }
+}
+
+@keyframes popGlow {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+        box-shadow: 0 0 0 var(--main-color);
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+        box-shadow: 0 0 12px var(--main-color);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        box-shadow: 0 0 8px var(--main-color);
     }
 }
 
